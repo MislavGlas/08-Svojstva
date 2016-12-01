@@ -13,7 +13,7 @@ namespace Vsite.CSharp.Testovi
         {
             Smočnica s = new Smočnica();
             int brojNamirnica = s.Namirnice.Count();
-            s.Namirnice.Add("kulen");
+            //s.Namirnice.Add("kulen");
             Assert.AreEqual(brojNamirnica, s.Namirnice.Count());
         }
     }

@@ -12,19 +12,24 @@ namespace Vsite.CSharp
         {
             public Smočnica()
             {
-                Namirnice = new List<string>(new string[] {"kruh", "mlijeko"});
+                namirnice = new List<string>(new string[] {"kruh", "mlijeko"});
             }
 
 
-            // TODO: Promijeniti get metodu svojstva Namirnice tako da se onemogući promjena sadržaja liste izvan klase (tj. da naredba Debug.Assert u metodi Main ne baci iznimku)
-            public List<string> Namirnice { get; private set; }
+            // Promijeniti get metodu svojstva Namirnice tako da se onemogući promjena sadržaja liste izvan klase (tj. da naredba Debug.Assert u metodi Main ne baci iznimku)
+            private List<string> namirnice;
+
+            public IEnumerable<string> Namirnice
+            {
+                get { return namirnice; }
+            }
         }
 
 
         static void Main(string[] args)
         {
             Smočnica s = new Smočnica();
-            s.Namirnice.Add("špek");
+            //s.Namirnice.Add("špek");
             
             foreach (var a in s.Namirnice)
                 Console.WriteLine(a);
